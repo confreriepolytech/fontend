@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+# Projet Cahier de Texte - Documentation Frontend
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Présentation du projet
 
-## Get started
+Le projet **Cahier de Texte** est une application mobile développée pour simplifier la gestion et l'accès aux cahiers de texte numériques. Cette application permet aux utilisateurs (élèves, enseignants, parents) de consulter les emplois du temps, accéder aux ressources pédagogiques et suivre l'avancement des cours.
 
-1. Install dependencies
+## Structure de l'application
 
-   ```bash
-   npm install
-   ```
+L'application est construite avec React Native et Expo, utilisant une architecture organisée en flux distincts pour l'authentification et la navigation principale.
 
-2. Start the app
+### Flux d'authentification
 
-   ```bash
-    npx expo start
-   ```
+Le flux d'authentification (`(auth)`) comprend:
+- Écran de connexion
+- Inscription
+- Authentification par code PIN
+- Option d'authentification biométrique
+- Confirmation de connexion réussie
 
-In the output, you'll find options to open the app in a
+### Flux principal
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Le flux principal (`(main)`) utilise un système de navigation à tiroir (Drawer) avec plusieurs onglets:
+- **Accueil/Livres**: Présentation des manuels et ressources disponibles
+- **Emploi du temps**: Visualisation du planning des cours
+- **Cahier de texte**: Consultation des devoirs et activités
+- **Compte**: Gestion des informations personnelles
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Navigation et interfaces
 
-## Get a fresh project
+L'application permet une navigation intuitive:
+- Navigation par onglets pour les fonctionnalités principales
+- Menu latéral (Drawer) pour accéder aux fonctionnalités secondaires
+- Navigation détaillée vers les livres et chapitres spécifiques
 
-When you're ready, run:
+## Composants clés
 
-```bash
-npm run reset-project
-```
+Plusieurs composants réutilisables ont été développés:
+- `BookCard`: Affichage des couvertures et informations des manuels
+- `ChapterItem`: Liste des chapitres d'un manuel
+- `InputField`: Champs de saisie personnalisés
+- `CustomDrawerContent`: Menu latéral avec options personnalisées
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Architecture technique
 
-## Learn more
+### Technologies utilisées
+- **React Native / Expo**: Développement cross-platform
+- **TypeScript**: Typage fort pour une meilleure qualité de code
+- **React Navigation**: Gestion des différents flux de navigation
+- **Contexte React**: Gestion d'état global (authentification)
 
-To learn more about developing your project with Expo, look at the following resources:
+### Organisation des dossiers
+- `app/`: Structure de l'application suivant le système de fichiers d'Expo Router
+- `components/`: Composants réutilisables
+- `constants/`: Valeurs constantes (couleurs, thèmes)
+- `contexts/`: Contextes React pour la gestion d'état
+- `hooks/`: Hooks personnalisés
+- `services/`: Services d'API et fonctions utilitaires
+- `assets/`: Ressources statiques (images, icônes)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Objectifs du projet
 
-## Join the community
+- Simplifier l'accès aux ressources pédagogiques
+- Offrir une vue claire des emplois du temps
+- Permettre un suivi précis des devoirs et activités
+- Assurer une expérience utilisateur fluide et intuitive
+- Proposer des fonctionnalités d'accessibilité pour tous les utilisateurs
 
-Join our community of developers creating universal apps.
+## Prochaines étapes
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Implémentation des notifications pour les nouveaux devoirs
+- Synchronisation hors-ligne des contenus
+- Amélioration des performances de chargement des ressources
+- Intégration avec les systèmes de gestion scolaire existants
