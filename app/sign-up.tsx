@@ -38,6 +38,7 @@ const AuthChoiceScreen = ({ navigation }: any) => (
   <Text style={[styles.title, { marginBottom: '5%' }]}>Connectez-vous</Text>
     
       <TouchableOpacity 
+      {/* Auth Google */}
         onPress={() => navigation.navigate('Info')} 
         style={styles.googleButton}
         activeOpacity={1}
@@ -54,10 +55,11 @@ const AuthChoiceScreen = ({ navigation }: any) => (
     <CustomButton
       title="Se connecter avec un numéro de téléphone ou un email"  
       icon={<ArrowIcon />}
+      {/* Navigation vers la page de connexion */}
       onPress={() => navigation.navigate('Info')}
     />
     </View>
-  
+    {/* Navigation vers la page de creation de compte */}
     <Text style={styles.footerText}>
       <Text style={[styles.logotitle1, {fontSize: 12}]}>Pas de compte ?</Text>{' '}
       <Text style={[styles.logotitle1, { color: COLORS.button, fontSize: 12 }]} onPress={() => navigation.navigate('Info')}>
